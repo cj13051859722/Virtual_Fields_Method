@@ -26,7 +26,7 @@ I = t * l**3 / 12 # Second moment of area respect to z-axis mm^4
 Step = 20. # in pixels => change this value to change the mesh size
 mmPerPix = 0.05 # mm / pixel ratio
 mesh_size = Step*mmPerPix
-print "Mesh size is", mesh_size, "mm"
+print("Mesh size is", mesh_size, "mm")
 SmallArea = (mesh_size)**2 # in mm^2
 
 x = np.arange(mesh_size/2,L,mesh_size)
@@ -178,9 +178,9 @@ input_prop = np.array((random.uniform(0.02, 20.) * 500., random.uniform(0., 2.) 
 #residual(input_prop)
 
 output_prop = minimize(residual, input_prop, method='L-BFGS-B', bounds=((10.,10000.),(0.,0.5)))
-print "E =", E
-print "E_vfm =", output_prop.x[0]
-print "Error_rel_E", (output_prop.x[0]-E)/E * 100., "%"
-print "nu =", nu
-print "nu_vfm =", output_prop.x[1]
-print "Error_rel_nu", (output_prop.x[1]-nu)/nu * 100., "%"
+print("E =", E)
+print("E_vfm =", output_prop.x[0])
+print("Error_rel_E", (output_prop.x[0]-E)/E * 100., "%")
+print("nu =", nu)
+print("nu_vfm =", output_prop.x[1])
+print("Error_rel_nu", (output_prop.x[1]-nu)/nu * 100., "%")

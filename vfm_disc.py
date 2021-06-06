@@ -1,5 +1,6 @@
 import numpy as np
-np.set_printoptions(threshold=np.nan)
+import sys
+np.set_printoptions(threshold=sys.maxsize)
 from numpy import linalg
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
@@ -104,22 +105,22 @@ InputQ = np.zeros((2))
 InputQ[0] = InputQ11
 InputQ[1] = InputQ12
 
-print "Result should be: Q11 =", InputQ[0] 
-print "Q11_vfm =", Q[0]
-print "Result should be: Q12 =", InputQ[1] 
-print "Q12_vfm =", Q[1]
+print("Result should be: Q11 =", InputQ[0])
+print("Q11_vfm =", Q[0])
+print("Result should be: Q12 =", InputQ[1])
+print("Q12_vfm =", Q[1])
 
 E_vfm = Q[0] *(1.-(Q[1]/Q[0])**2)
 E_error = (E_vfm-E) / E
-print "Result should be: E =", E 
-print "E_vfm =", E_vfm
-print "E_error_rel = ", E_error * 100.,"%"
+print("Result should be: E =", E)
+print("E_vfm =", E_vfm)
+print("E_error_rel = ", E_error * 100.,"%")
 
 nu_vfm = Q[1] / Q[0]
 nu_error = (nu_vfm-nu)/nu
-print "Result should be: nu =", nu 
-print "nu_vfm =", nu_vfm
-print "nu_error_rel = ", nu_error * 100.,"%"
+print("Result should be: nu =", nu)
+print("nu_vfm =", nu_vfm)
+print("nu_error_rel = ", nu_error * 100.,"%")
 
 
     
