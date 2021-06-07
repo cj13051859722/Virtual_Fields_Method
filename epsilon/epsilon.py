@@ -1,4 +1,5 @@
 import numpy as np
+import scipy.io as scio
 
 
 def real_epsilon_fig2_7(P, E, nu, L, l, t, Step, mmPerPix):
@@ -22,6 +23,8 @@ def real_epsilon_fig2_7(P, E, nu, L, l, t, Step, mmPerPix):
     epsilon6 = (P / (2 * I * G)) * (y_Mat ** 2 - c ** 2)
     return [epsilon1, epsilon2, epsilon6]
 
-def dic_epsilon():
+
+def dic_epsilon(dataFile):
+    data = scio.loadmat(dataFile)
     epsilon1, epsilon2, epsilon6 = 0, 0, 0
     return [epsilon1, epsilon2, epsilon6]
