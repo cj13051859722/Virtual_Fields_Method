@@ -126,7 +126,7 @@ if __name__ == "__main__":
     t = 1
     epsilon1, epsilon2, epsilon6 = real_epsilon_fig2_7(P=P, E=E, nu=nu, L=L, l=l, t=t, Step=Step,
                                                 mmPerPix=mmPerPix)  # 模拟值
-    # epsilon1, epsilon2, epsilon6 = dic_epsilon()  # TODO DIC模拟值
+    epsilon1, epsilon2, epsilon6 = dic_epsilon('/Users/shuidi/strain_0607.mat')  # TODO DIC模拟值
 
     # step 2值估算
     input_prop = np.array((random.uniform(0.02, 20.) * 500., random.uniform(0., 2.) * 0.25), dtype=float)  # 初始值

@@ -26,5 +26,6 @@ def real_epsilon_fig2_7(P, E, nu, L, l, t, Step, mmPerPix):
 
 def dic_epsilon(dataFile):
     data = scio.loadmat(dataFile)
-    epsilon1, epsilon2, epsilon6 = 0, 0, 0
+    cur_5 = data['strains'][0][4]   # 提取第5张图的数据[4]代表第五张图的数据
+    epsilon1, epsilon2, epsilon6 = cur_5[0], cur_5[1], cur_5[2]
     return [epsilon1, epsilon2, epsilon6]
